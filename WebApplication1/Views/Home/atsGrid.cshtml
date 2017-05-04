@@ -1,0 +1,24 @@
+﻿@model dynamic
+
+@{
+   ViewBag.Title = "Grid";
+}
+
+@section scripts{
+    <script src="~/App/atsGrid/App.js"></script>
+    <script src="~/App/atsGrid/Services/GridService.js"></script>
+    <script src="~/App/atsGrid/Controllers/RootCtrl.js"></script>
+    <script src="~/App/atsGrid/Controllers/GridHomeCtrl.js"></script>
+}
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("grid"), ["grid"]);
+}
+
+<div ng-non-bindable>
+    <div id="grid" data-ng-controller="rootCtrl">
+        <div class="row">
+            <div ng-view></div>
+        </div>
+    </div>
+</div>

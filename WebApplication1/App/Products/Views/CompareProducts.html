@@ -1,0 +1,54 @@
+﻿<style>
+    #chart-demo {
+        width: 100%;
+        height: 440px;
+    }
+
+    #chart-demo > .center { text-align: center; }
+
+    #chart-demo > .center > div,
+    #chart-demo > .center > .dx-widget {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #pie {
+        height: 440px;
+        width: 100%;
+    }
+</style>
+
+
+<div id="gridContainer" dx-data-grid="gridOptions" dx-item-alias="employee">
+    <div data-options="dxTemplate:{ name:'cellTemplate' }">
+        <img ng-src="{{employee.value}}" style="width: 100%; height: auto;"/>
+    </div>
+</div>
+
+
+<button class="btn btn-lg dx-button-default" ng-click="report()">
+    <span><i class="fa fa-balance-scale" aria-hidden="true">Compare Selected</i></span>
+</button>
+
+
+<div ng-if="showCompare">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="compareContainer" dx-data-grid="compareGridOptions">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="chart-demo">
+                <div id="chart" dx-chart="chartOptions"></div>
+                <div class="center">
+                    <div>Series Type</div>
+                    &nbsp;
+                    <div dx-select-box="typesOptions"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="pie" dx-pie-chart="pieChartOptions"></div>
+        </div>
+    </div>
+</div>

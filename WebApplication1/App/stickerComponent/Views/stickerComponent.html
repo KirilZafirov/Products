@@ -1,0 +1,19 @@
+﻿
+<select ng-model="myVar">
+    <option value="grid" >Data Grid
+    <option value="chart" >Chart
+    <option value="spiderWeb">Spider Web
+</select>
+<div ng-switch="myVar">
+    <div ng-switch-when="grid" >
+        <sticker-Grid-Component></sticker-Grid-Component>
+    </div>
+    <div ng-switch-when="chart">
+
+        <sticker-Chart-Component></sticker-Chart-Component>
+    </div>
+    <div ng-switch-when="spiderWeb">
+
+        <sticker-Spider-Web-Component></sticker-Spider-Web-Component>
+    </div>
+</div>

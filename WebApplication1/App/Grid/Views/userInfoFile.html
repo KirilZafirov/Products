@@ -1,0 +1,44 @@
+﻿<style>
+    .user-ok {
+        color: greenyellow;
+    }
+
+    .user-warning {
+        color: yellow;
+    }
+
+    .user-problem{
+        color: orange;
+    }
+    .user-error {
+        color: red;
+    }
+</style>
+
+<user-Panel name="{{vm.user.name}}" collapsed="vm.initialCollapsed" level="vm.user.level">
+    <address></address>
+    <br />
+    <div>
+        <h4> Friends:</h4>
+        <ul>
+            <li ng-repeat="friend in vm.user.friends">
+                {{friend}}
+                <remove-Friend ng-click="vm.removeFriend(friend)"></remove-Friend>
+            </li>
+        </ul>
+        <div ng-show="!!vm.user.rank">
+            Rank:{{vm.user.rank}}
+        </div>
+        <button ng-show="!vm.user.rank" class="btn btn-success" ng-click="vm.knightMe(user)">Knight Me!</button>
+    </div>
+    <modal open="vm.showKnightModal" options="{width:'100px',left:'40px'}" on-close="knightModalDone(response)">
+        <div class="panel panel-primary">
+            <div class="panel-heading"> Jedi Knight</div>
+            <div class="panel-body">
+                <p>Do you want the jedi Knight rank grated to {{vm.user.name}}?</p>
+                <div class="btn btn-success" ng-click="vm.knightDialogDone(true)">Yes</div>
+                <div class="btn btn-danger" ng-click="vm.knightDialogDone(false)">No</div>
+            </div>
+        </div>
+    </modal>
+</user-Panel>

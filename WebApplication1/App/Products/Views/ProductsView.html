@@ -1,0 +1,79 @@
+﻿<style>
+
+.productImage {
+    list-style-type: none;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+</style>
+<!--<div class="row">
+        <div class="col-sm-3 col-md-3 productImage" ng-repeat="employee in employees">
+            <div ng-click="showInfo(employee)">
+                <img id="{{employee.ID}}" ng-src="{{employee.Picture}}" style="width: 100%; height: auto;"/>
+            </div> 
+    </div>
+</div>
+
+    <div ng-init="currentEmployee">
+        <div class="popup"
+             dx-popup="popupOptions">
+            <div data-options="dxTemplate: { name:'info' }">
+                <p>
+                    Full Name:
+                    <span>{{currentEmployee.FirstName}}</span>
+                    <span>{{currentEmployee.LastName}}</span>
+                </p>
+                <p>
+                    Birth Date:
+                    <span>{{currentEmployee.BirthDate}}</span>
+                </p>
+                <p>
+                    Address:
+                    <span>{{currentEmployee.Address}}</span>
+                </p>
+                <p>
+                    Hire Date:
+                    <span>{{currentEmployee.HireDate}}</span>
+                </p>
+                <p>
+                    Position:
+                    <span>{{currentEmployee.Position}}</span>
+                </p>
+            </div>
+        </div>
+    </div>-->
+
+<div id="gridContainer" dx-data-grid="gridOptions" dx-item-alias="employee">
+   
+</div>
+
+
+
+<button class="btn btn-lg dx-button-default" ng-click="report()">
+    <span><i class="fa fa-balance-scale" aria-hidden="true">Compare Selected</i></span>
+</button>
+
+
+<div ng-if="showCompare">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="compareContainer" dx-data-grid="compareGridOptions">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="chart-demo">
+                <div id="chart" dx-chart="chartOptions"></div>
+                <div class="center">
+                    <div>Series Type</div>
+                    &nbsp;
+                    <div dx-select-box="typesOptions"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="pie" dx-pie-chart="pieChartOptions"></div>
+        </div>
+    </div>
+</div>

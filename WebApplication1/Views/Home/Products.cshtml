@@ -1,0 +1,27 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Products";
+}
+
+@section scripts{
+    <script src="~/App/Products/App.js"></script>
+    <script src="~/App/Products/Services/productsService.js"></script>
+    <script src="~/App/Products/Controllers/RootCtrl.js"></script>
+    <script src="~/App/Products/Controllers/ProductsCtrl.js"></script>
+    <script src="~/App/Products/Controllers/CompareProductsCtrl.js"></script>
+    <script src="~/App/Products/Controllers/AddProductCtrl.js"></script>
+    }
+@section jsCode {
+    angular.bootstrap(document.getElementById("products"), ["products"]);
+}
+
+<div ng-non-bindable>
+    <div id="products" data-ng-controller="rootCtrl" style="margin:8%; ">
+        <div class="row">
+            <div ng-view></div>
+        </div>
+    </div>
+</div>
+
+
+

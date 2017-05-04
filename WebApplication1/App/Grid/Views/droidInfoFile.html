@@ -1,0 +1,25 @@
+﻿<style>
+    .user-ok {
+        color: greenyellow;
+    }
+
+    .user-warning {
+        color: yellow;
+    }
+
+    .user-problem {
+        color: orange;
+    }
+
+    .user-error {
+        color: red;
+    }
+</style>
+
+<user-panel name="{{vm.droid.name}}" collapsed="{{vm.initialCollapsed}}" level="vm.droid.level">
+    
+    {{vm.droid.specifications.manufacturer}}-
+    {{vm.droid.specifications.type}}-
+    {{vm.droid.specifications.productLine}}
+</user-panel>
+

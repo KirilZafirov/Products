@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+        <ul class="navbar-right">
+            <li>
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new {title = "Manage"})
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+<ul class="navbar-right">
+    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    @*<span data-ng-controller="indexCtrl" id="homeContainer" class="container-fluid">
+        <button type="button" class="btn btn-info btn-sm" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button>
+        <button type="button" class="btn btn-info btn-sm" ng-click="changeLanguage('es')" translate="BUTTON_LANG_ES"></button>
+    </span>*@
+</ul>
+}
+
+@*<span translate="Menu_ChangeLang"></span>*@
+<span class="btn dx-button-default btn-sm" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></span>
+<span class="btn dx-button-default btn-sm" ng-click="changeLanguage('mk')" translate="BUTTON_LANG_ES"></span>

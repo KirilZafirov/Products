@@ -1,0 +1,31 @@
+﻿@model dynamic
+
+@{
+   ViewBag.Title = "Grid";
+}
+
+@section scripts{
+    <script src="~/App/stickerComponent/App.js"></script>
+    <script src="~/App/stickerComponent/Directives/stickerChartComponentDirective.js"></script>
+    <script src="~/App/stickerComponent/Directives/stickerGridComponentDirective.js"></script>
+    <script src="~/App/stickerComponent/Directives/stickerSpiderWebComponent.js"></script>
+    <script src="~/App/stickerComponent/Directives/stickerComponentDirective.js"></script>
+    <script src="~/App/stickerComponent/Services/stickerComponentService.js"></script>
+    <script src="~/App/stickerComponent/Services/gridComponentService.js"></script>
+    <script src="~/App/stickerComponent/Services/chartComponentService.js"></script>
+    <script src="~/App/stickerComponent/Services/spiderWebComponentService.js"></script>
+    <script src="~/App/stickerComponent/Controllers/RootCtrl.js"></script>
+    <script src="~/App/stickerComponent/Controllers/StickerComponentHomeCtrl.js"></script>
+}
+
+@section jsCode {
+    angular.bootstrap(document.getElementById("stickerComponent"), ["stickerComponent"]);
+}
+
+<div ng-non-bindable>
+    <div id="stickerComponent" data-ng-controller="rootCtrl">
+        <div class="row">
+            <div ng-view></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+﻿<style>
+    #form-container {
+        margin: 10px;
+    }
+
+    #button {
+        float: right;
+        margin-top: 20px;
+    }
+
+    .long-title h3 {
+        font-family: 'Segoe UI Light', 'Helvetica Neue Light', 'Segoe UI', 'Helvetica Neue', 'Trebuchet MS', Verdana;
+        font-weight: 200;
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .content h4 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 18px;
+}
+ 
+.option{
+    margin-bottom: 10px;
+}
+ 
+.content {
+    margin-top: 50px;
+    margin-left: 10px;
+}
+ 
+.selected-item {
+    margin-bottom: 20px;
+}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="long-title"><h3>Product Details</h3></div>
+            <div id="form-container">
+                <div id="form" dx-form="formOptions"></div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div id="range-selector" dx-range-selector="rangeSelectorOptions"></div>
+        </div>
+        <div class="col-md-4">
+            <div id="fileuploader">
+                <div dx-file-uploader="options">
+                </div>
+                <div class="content">
+                    <h4>Options</h4>
+                    <div>
+                        <div>File types:</div>
+                        <div class="option" dx-select-box="acceptOptions"></div>
+                    </div>
+                    <div>
+                        <div>Upload mode:</div>
+                        <div dx-select-box="uploadOptions"></div>
+                    </div>
+                    <div dx-check-box="{
+                        text: 'Allow multiple files selection',
+                        bindingOptions: {
+                            value: 'multiple'
+                        }
+                }"></div>
+                </div>
+                <div class="content">
+                    <div ng-if="value.length > 0">
+                        <h4>Selected Files</h4>
+                    </div>
+                    <div ng-repeat="val in value">
+                        <div class="selected-item">
+                            Name:
+                            <span>{{val.name}}</span><br />
+                            Size:
+                            <span>{{val.size}}</span>bytes<br />
+                            Type:
+                            <span>{{val.type}}</span><br />
+                            Last Modified Date:
+                            <span>{{val.lastModifiedDate}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
